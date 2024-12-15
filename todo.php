@@ -3,22 +3,24 @@
 <script>
 let todo = (function(){
     function add(ctx) {
-        let space = ctx.up('[todo]');
-        data = val.get(space);
-        data.items.push({text: data.add, status: 'todo'});
-        data.add = '';
-        val.set(space, data);
-        output(space);
+        val.modify(ctx.up('[todo]'), (data) => {
+            data.items.push({text: data.add, status: 'todo'});
+            data.add = '';
+            return data;
+        });
+        ctx.up('[todo]').one('[todo-add]').focus();
+        output(ctx);
     }
     function check(ctx) {
-        output(ctx.up('[todo]'));
+        output(ctx);
     }
     function remove(ctx) {
         ctx.up('[todo-item]').remove();
-        output(ctx.up('[todo]'));
+        output(ctx);
     }
-    function output(space) {
-        space.one('[todo-output]').textContent = JSON.stringify(val.get(space).items, null, 4);
+    function output(ctx) {
+        let space = ctx.up('[todo]');
+        space.one('[todo-output]').textContent = JSON.stringify(val.get(space), null, 4);
     }
     return {
         add,
@@ -40,11 +42,22 @@ let todo = (function(){
 </template>
 
 <div todo>
-    <div val val-fx="array" val-key="items" val-tpl="[todo-item-tpl]">
-    </div>
+
+    <div val val-fx="array" val-key="items" val-tpl="[todo-item-tpl]"></div>
+
     <div>
-        <input type="text" val val-fx="input" val-key="add" />
-        <button onclick="todo.add(this)">add</button>
+        <input
+            todo-add
+            val val-fx="input" val-key="add"
+            type="text"
+        />
+        <button  onclick="todo.add(this)">add</button>
     </div>
+
     <pre todo-output></pre>
+
 </div>
+
+<script>
+    document.one('[todo]').one('[todo-add]').focus();
+</script>
