@@ -14,5 +14,14 @@ DOM as a model using [DX](https://github.com/xtompie/dx) for getting, setting, r
 val.set(document.one('[example]'), {title: 'Bar'}); // will change the DOM
 console.log(val.get(document.one('[example]'))); // => {title: "Bar"}
 </script>
+```
 
+Same can be done using fx. Predefined behaviours.
 
+```html
+<div example>
+    <div val val-fx="text" val-key="title">Foo</div>
+</div>
+```
+
+[Predefined fx](val.fx.php)
