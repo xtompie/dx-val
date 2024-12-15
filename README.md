@@ -25,3 +25,10 @@ Same can be done using fx. Predefined behaviours.
 ```
 
 [Predefined fx](val.fx.php)
+
+## Examples
+
+- [Example1](example1.php)
+- [Todo](todo.php)
+
+To run examples execute `composer serve`
