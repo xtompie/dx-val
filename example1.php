@@ -29,6 +29,7 @@
     </div>
 
     <div
+        items
         style="background-color: blue; padding: 10px;"
         val val-fx="array" val-key="items" val-tpl="[item]"
     >

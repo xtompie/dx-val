@@ -22,9 +22,7 @@ var val = (function (val) {
                 return;
             }
             el.innerHTML = '';
-            if (typeof tpl === 'string') {
-                tpl = document.one(tpl);
-            }
+            tpl = (typeof tpl === 'string') ? document.one(tpl) : tpl;
             data.each(d => {
                 let frag = tpl.tpl();
                 obj(frag, d);
@@ -38,10 +36,26 @@ var val = (function (val) {
             return;
         }
         tpl = (typeof tpl === 'string') ? document.one(tpl) : tpl;
+        el.innerHTML = '';
         let frag = tpl.tpl();
         obj(frag, data);
-        el.innerHTML = '';
         el.appendChild(frag);
+    }
+    function append(el, tpl, data) {
+        tpl = (typeof tpl === 'string') ? document.one(tpl) : tpl;
+        data.each(d => {
+            let frag = tpl.tpl();
+            obj(frag, d);
+            el.appendChild(frag);
+        });
+    }
+    function prepend(el, tpl, data) {
+        tpl = (typeof tpl === 'string') ? document.one(tpl) : tpl;
+        data.reverse().each(d => {
+            let frag = tpl.tpl();
+            obj(frag, d);
+            el.prepend(frag);
+        });
     }
     function patch(el, data) {
         obj(el, obj(el).merge(data));
@@ -83,6 +97,8 @@ var val = (function (val) {
         obj,
         patch,
         render,
+        prepend,
+        append,
         set,
     });
 })(val || {});

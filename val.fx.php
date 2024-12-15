@@ -1,5 +1,5 @@
 <script>
-val = val || {};
+var val = val || {};
 val.fx = val.fx || {};
 val.fx.object = {
     get: (el) => val.obj(el),
