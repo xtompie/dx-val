@@ -11,6 +11,11 @@ let todo = (function(){
         ctx.up('[todo]').one('[todo-add]').focus();
         output(ctx);
     }
+    function keydown(ctx, event) {
+        if (event.key === 'Enter') {
+            add(ctx);
+        }
+    }
     function check(ctx) {
         output(ctx);
     }
@@ -26,32 +31,33 @@ let todo = (function(){
         add,
         check,
         remove,
+        keydown,
     }
 })();
 </script>
 
 <template todo-item-tpl>
-    <div todo-item val val-fx="object">
+    <div todo-item val="object">
         <input
-            val val-fx="checkbox" val-key="status" val-check="done" val-uncheck="todo"
+            val="checkbox" val-key="status" val-check="done" val-uncheck="todo"
             type="checkbox" onchange="todo.check(this)"
         />
-        <span val val-fx="text" val-key="text"></span>
+        <span val="text" val-key="text"></span>
         <button onclick="todo.remove(this)">remove</button>
     </div>
 </template>
 
 <div todo>
 
-    <div val val-fx="array" val-key="items" val-tpl="[todo-item-tpl]"></div>
+    <div val="array" val-key="items" val-tpl="[todo-item-tpl]"></div>
 
     <div>
         <input
-            todo-add
-            val val-fx="input" val-key="add"
+            todo-add onkeydown="todo.keydown(this, event)"
+            val="input" val-key="add"
             type="text"
         />
-        <button  onclick="todo.add(this)">add</button>
+        <button  onclick="todo.add(this)" >add</button>
     </div>
 
     <pre todo-output></pre>

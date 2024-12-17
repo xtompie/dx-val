@@ -6,8 +6,8 @@ var val = (function (val) {
         return typeof tpl === 'string' ? document.one(tpl) : tpl;
     }
     function _fx(el, write, v = null) {
-        let fx = el.attr('val-fx');
-        if (fx && val.fx[fx]) {
+        let fx = el.attr('val');
+        if (fx && fx !== '' && val.fx[fx]) {
             return write ? val.fx[fx].set(el, v) : val.fx[fx].get(el);
         }
     }
