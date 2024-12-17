@@ -11,7 +11,9 @@
 </template>
 
 <template error>
-    <div val val-fx="text" val-key="text"></div>
+    <div val val-fx="object">
+        <div val val-fx="text" val-key="text"></div>
+    </div>
 </template>
 
 <div example>
