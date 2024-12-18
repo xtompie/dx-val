@@ -20,7 +20,7 @@ Same can be done using fx. Predefined behaviours.
 
 ```html
 <div example>
-    <div val val-fx="text" val-key="title">Foo</div>
+    <div val="text" val-key="title">Foo</div>
 </div>
 ```
 
@@ -28,7 +28,7 @@ Same can be done using fx. Predefined behaviours.
 
 ## Examples
 
-- [Example1](example1.php)
-- [Todo](todo.php)
+- [Example Todo](example-todo.php)
+- [Test](test.php)
 
 To run examples execute `composer serve`

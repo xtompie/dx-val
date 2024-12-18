@@ -47,8 +47,8 @@ var val = (function (val) {
         if (arguments.length === 1) {
             return el.allfd('[val]').map(_get);
         }
+        el.innerHTML = '';
         if (data?.length) {
-            el.innerHTML = '';
             _iter(el, tpl, data, 'appendChild');
         }
     }
