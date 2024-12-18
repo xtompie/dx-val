@@ -1,6 +1,6 @@
 # DX-VAL
 
-DOM as a model using [DX](https://github.com/xtompie/dx) for getting, setting, rendering values.
+DOM as a model. Getting, setting values. Rendering engine. Using [DX](https://github.com/xtompie/dx).
 
 ```html
 <div example>
