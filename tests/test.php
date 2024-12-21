@@ -1,5 +1,5 @@
-<style> body {display: none;} </style>
-<?php require 'val.php' ?>
+
+<?php require '../val.php' ?>
 <script>
     function deepEqual(obj1, obj2) {
         if (obj1 === obj2) return true;
@@ -34,6 +34,10 @@
         };
     }
 </script>
+
+<p>see console for test result</p>
+
+<section style="display: none;">
 
 <div>
     <div>
@@ -433,3 +437,5 @@
         });
     </script>
 </div>
+
+</section>

@@ -2,8 +2,16 @@
 var val = val || {};
 val.fx = val.fx || {};
 val.fx.object = {
-    get: (el) => val.obj(el),
-    set: (el, data) => val.set(el, data)
+    get: (el) => el.attr('val-key')
+        ? { [el.attr('val-key')]: val.obj(el) }
+        : val.obj(el),
+    set: (el, data) => {
+        if (el.attr('val-key')) {
+            val.set(el, data[el.attr('val-key')]);
+        } else {
+            val.set(el, data);
+        }
+    }
 };
 val.fx.array = {
     get: (el) => ({ [el.attr('val-key')]: val.arr(el) }),

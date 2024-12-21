@@ -32,11 +32,19 @@ HTMLElement.prototype.attr = function(a, v) {
         return this;
     }
 }
+HTMLElement.prototype.hide = function(v = true) {
+    this.style.display = v === true ? 'none' : 'false';
+    return this;
+}
 HTMLElement.prototype.one = function(s) {
     return this.querySelector(s);
 }
 HTMLElement.prototype.tpl = function() {
     return this.content.cloneNode(true);
+}
+HTMLElement.prototype.show = function(v = true) {
+    this.style.display = v === true ? '' : 'none';
+    return this;
 }
 HTMLElement.prototype.up = function(s) {
     if (s === undefined) {

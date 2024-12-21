@@ -1,4 +1,4 @@
-<?php require 'val.php' ?>
+<?php require '../../val.php' ?>
 
 <script>
 let todo = (function(){

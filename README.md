@@ -28,7 +28,11 @@ Same can be done using fx. Predefined behaviours.
 
 ## Examples
 
-- [Example Todo](example-todo.php)
-- [Test](test.php)
+- [Chat](/examples/chat/index.php)
+- [Todo](/examples/todo/index.php)
+
+## Tests
+
+- [Test](/tests/test.php)
 
 To run examples execute `composer serve`
