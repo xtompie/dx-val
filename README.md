@@ -28,11 +28,12 @@ Same can be done using fx. Predefined behaviours.
 
 ## Examples
 
-- [Chat](/examples/chat/index.php)
-- [Todo](/examples/todo/index.php)
+- [accordion](/examples/accordion/index.php)
+- [chat](/examples/chat/index.php)
+- [todo](/examples/todo/index.php)
 
 ## Tests
 
-- [Test](/tests/test.php)
+- [test](/tests/test.php)
 
 To run examples execute `composer serve`
