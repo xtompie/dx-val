@@ -35,7 +35,7 @@
     }
 </script>
 
-<p>see console for test result</p>
+<pre>see console for test result</pre>
 
 <section style="display: none;">
 
